@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/feather-icons" />
+</head>
+<body class="main-bg">
+  <div class="landing-container">
+    <h1 class="landing-heading">Find your city's weather</h1>
+
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <input type="text" id="cityInput" placeholder="Search" onkeydown="handleKey(event)" />
+        <button onclick="searchCity()" class="icon-button right-icon">
+          <i data-feather="search"></i>
+        </button>
+      </div>
+      <button onclick="startVoiceInput()" class="icon-button mic-icon" title="Voice Search">
+        <i data-feather="mic"></i>
+      </button>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      document.addEventListener("DOMContentLoader",() =>{
+        feather.replace();
+      });
+      
+    </script>
+</body>
+
+</html>

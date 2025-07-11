@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | CityScope</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="config.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body class="blur-bg">
+
+  <!-- ✅ Navbar -->
+  <div class="top-nav">
+    <div class="nav-left">
+      <button id="weatherTab" class="active" onclick="switchTab('weather')">Weather</button>
+      <button id="newsTab" onclick="switchTab('news')">News</button>
+    </div>
+
+    <!-- ✅ Right controls: search, mic, location, theme -->
+    <div class="nav-right">
+      <div class="search-wrapper">
+        <input type="text" id="cityInput" placeholder="Search your city..." onkeydown="handleResultKey(event)" />
+        <button class="icon-button" onclick="searchCity()" title="Search"><i data-feather="search"></i>
+        </button> 
+      </div>
+      <button class="icon-button" onclick="startVoiceInputResult()" title="Voice Search">
+        <i data-feather="mic"></i>
+      </button>
+      <button class="icon-button" onclick="getLocation()" title="Detect Location">
+        <i data-feather="map-pin"></i>
+      </button>
+      <button class="icon-button" onclick="toggleMode()" title="Toggle Mode">
+        <i id="themeIcon" data-feather="moon"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ✅ Main Content Area -->
+  <div class="content-box">
+    <div id="weatherSection">
+      <h2><span id="cityName"></span> <span id="currentDate" class="date-text"></span></h2>
+      <p id="loading">Loading...</p>
+      <div id="weatherInfo" class="hidden">
+        <img id="icon" />
+        <p>🌡 Temp: <span id="temp"></span>°C</p>
+        <p>💧 Humidity: <span id="humidity"></span>%</p>
+        <p>🌬 Wind: <span id="wind"></span> m/s</p>
+
+        <h3><i data-feather="clock"></i> Today's Forecast</h3>
+        <div id="todayHourly" class="hourly-forecast"></div>
+
+        <h3><i data-feather="calendar"></i> 5-Day Forecast</h3>
+        <div id="forecast"></div>
+      </div>
+    </div>
+
+    <div id="newsSection" class="hidden">
+      <h3><i data-feather="file-text"></i> News Headlines</h3>
+      <div id="news"></div>
+    </div>
+  </div>
+
+  <!-- ✅ Feather icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      feather.replace();
+    });
+  </script>
+</body>
+</html>
