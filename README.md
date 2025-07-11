@@ -29,7 +29,7 @@ It fetches real time weather information using openweather api and additionally 
 
 ### 🔹 Option 1: Locally
 
-1. Download the code as ZIP or clone the repo:
+1. Download the code as ZIP then extract all or clone the repo:
    ```bash
    git clone https://github.com/YOUR-USERNAME/Task1_Weather_App.git
 2. Open index.html in your own browser
